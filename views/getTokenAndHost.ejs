@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Enter Your Credentials</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Please Provide Your Canvas Credentials</h1>
+    <blockquote>Note: This information is not stored or logged anywhere on this system. It is encrypted in session memory during
+    your use of this Website and is used only to access the Canvas API on your behalf. The session is destroyed when you log out.</blockquote>
+    <form action="/credentials" method="POST">
+      <label for="host">Canvas Host (e.g. <code>canvas.harvard.edu</code>)
+          <input type="text" size="48" name='host' id='host'/>
+      </label>
+      <br/>
+      <label for="token">Access Token (this will not be stored anywhere)
+          <input type="text" size="72" name='token' id='token'/>
+      </label>
+      <input type="submit" nam="submit" value="Submit">
+    </form>
+  </body>
+</html>

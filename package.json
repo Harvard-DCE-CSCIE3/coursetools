@@ -1,0 +1,30 @@
+{
+  "name": "msit-express",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node --inspect ./bin/www"
+  },
+  "dependencies": {
+    "caccl-api": "^1.0.60",
+    "caccl-api-forwarder": "^1.1.5",
+    "caccl-authorizer": "^1.1.11",
+    "caccl-send-request": "^1.0.13",
+    "cookie-parser": "~1.4.4",
+    "dce-reactkit": "^1.0.20",
+    "debug": "~2.6.9",
+    "dotenv": "^8.2.0",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "express-flash": "0.0.2",
+    "express-session": "^1.17.1",
+    "helmet": "^3.23.3",
+    "http-errors": "~1.6.3",
+    "mongoose": "^5.9.16",
+    "morgan": "~1.9.1",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "randomstring": "^1.1.5",
+    "react-dom": "^16.13.1"
+  }
+}

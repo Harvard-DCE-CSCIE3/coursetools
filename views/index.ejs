@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>You are logged in</h1>
+    <li> Welcome:  <%=user.name %> </li>
+    <li> Email: <%=user.primary_email %></li>
+    <li><a href="/coursetools" target='_blank'>Go to CourseTools</a></li>
+    <li><a href="/logout">Logout</a></li>
+  </body>
+</html>
