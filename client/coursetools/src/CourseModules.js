@@ -16,7 +16,7 @@ import APIService from './util/APIService';
 
 const columns = [
   { key: "position", name: "Actions", width: 75, resizeable: false, formatter: ActionsFormatter },
-  { key: "name", name: "Name", width: 400, resizeable: true, editable: true, formatter: EditableFormatter,},
+  { key: "name", name: "Name (double-click to edit)", width: 400, resizeable: true, editable: true, formatter: EditableFormatter,},
   { key: "published", name: "Published", width: 100, formatter: PublishedFormatter, resizeable: true, },
   { key: "type", name: "Type", width: 110, resizeable: true,},
   { key: "unlock_at", name: "Unlock At", resizeable: true, formatter: DatePickerFormatterUnlock, },//editor: DatePickerEditor,

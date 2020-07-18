@@ -101,9 +101,9 @@ class Course extends Component {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href={'info'}>Course Info</Nav.Link>
-            <Nav.Link href={'modules'}>Course Modules</Nav.Link>
-            <Nav.Link href={'assignments'}>Course Assignments</Nav.Link>
+            <Nav.Link href={process.env.REACT_APP_BASE_URL + '/course/' + this.props.match.params.number+ '/info'}>Course Info</Nav.Link>
+            <Nav.Link href={process.env.REACT_APP_BASE_URL + '/course/' + this.props.match.params.number+ '/modules'}>Course Modules</Nav.Link>
+            <Nav.Link href={process.env.REACT_APP_BASE_URL + '/course/' + this.props.match.params.number+ '/assignments'}>Course Assignments</Nav.Link>
           </Nav>
           <Navbar.Text>
             <b>Course Title:</b> {this.state.course.name} <b>Course ID:</b> {this.props.match.params.number}

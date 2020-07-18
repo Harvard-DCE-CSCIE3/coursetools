@@ -79,7 +79,7 @@ function CourseIdFormatter(cell, el, index){
   return <a href={'https://' + canvasHost + '/courses/' +el.id} target="_blank" title='Open in Canvas (in a new tab)'>{el.id}</a>
 }
 function ModulesFormatter(cell, el, index ){
-  return <div>{el.modules.reduce((acc, el)=>{return el.published ? ++acc : acc }, 0)} of {el.modules.length} <a href={'/course/' + el.id + '/modules'} target="_blank" title="Open CourseTools Modules (opens in a new tab)"><Cog /></a></div>
+  return <div>{el.modules.reduce((acc, el)=>{return el.published ? ++acc : acc }, 0)} of {el.modules.length} <a href={process.env.REACT_APP_BASE_URL + '/course/' + el.id + '/modules'} target="_blank" title="Open CourseTools Modules (opens in a new tab)"><Cog /></a></div>
 }
 
 class CourseGroup extends Component{
@@ -198,7 +198,7 @@ class CourseGroup extends Component{
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href={'info'}>Course Group Info</Nav.Link>
+            <Nav.Link href={process.env.REACT_APP_BASE_URL + '/group/' + this.props.match.params.number + '/info'}>Course Group Info</Nav.Link>
           </Nav>
           <Navbar.Text>
              <b>CourseGroup ID:</b> {this.props.match.params.number}

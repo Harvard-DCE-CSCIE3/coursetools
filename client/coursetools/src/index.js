@@ -7,7 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 
 ReactDOM.render((
-  <BrowserRouter basename={'coursetools'}>
+  <BrowserRouter basename={process.env.REACT_APP_BASE_URL}>
     <App />
   </BrowserRouter>
   ),
