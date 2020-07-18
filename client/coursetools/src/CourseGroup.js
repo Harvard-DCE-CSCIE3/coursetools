@@ -114,7 +114,7 @@ class CourseGroup extends Component{
 
       console.log('did mount');
 
-      const response = fetch('https://localhost/config', {credentials: 'include',}).then(async function (response){
+      const response = fetch('/config', {credentials: 'include',}).then(async function (response){  // dev problem - locahost
         console.log(response);
         const json = await response.json();
         canvasHost = json.canvasHost;
