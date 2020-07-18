@@ -198,7 +198,7 @@ class CourseGroup extends Component{
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href={'/group/'+this.props.match.params.number}>Course Group Info</Nav.Link>
+            <Nav.Link href={'info'}>Course Group Info</Nav.Link>
           </Nav>
           <Navbar.Text>
              <b>CourseGroup ID:</b> {this.props.match.params.number}
@@ -207,6 +207,22 @@ class CourseGroup extends Component{
       </Navbar>
         <Switch>
             <Route exact path='/group/:number'>
+              <Container>
+              <Row>
+                <Col>
+                <BootstrapTable
+                  keyField='id'
+                  data={ this.state.tabledata}
+                  columns={ columns }
+                  striped
+                  hover
+                  condensed
+                  />
+                </Col>
+              </Row>
+              </Container>
+            </Route>
+            <Route exact path='/group/:number/info'>  // fix this - new component
               <Container>
               <Row>
                 <Col>

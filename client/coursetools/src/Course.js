@@ -79,7 +79,7 @@ class Course extends Component {
         courseId: this.state.courseId,
         includeEnrollments: true,
       })
-      course.students = students; 
+      course.students = students;
 /*      let teachers = await api.course.listTeachers({
         courseId: this.state.courseId,
         includeEnrollments: true,
@@ -101,9 +101,9 @@ class Course extends Component {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href={'/course/'+this.props.match.params.number}>Course Info</Nav.Link>
-            <Nav.Link href={'/course/'+this.props.match.params.number+'/modules'}>Course Modules</Nav.Link>
-            <Nav.Link href={'/course/'+this.props.match.params.number+'/assignments'}>Course Assignments</Nav.Link>
+            <Nav.Link href={'info'}>Course Info</Nav.Link>
+            <Nav.Link href={'modules'}>Course Modules</Nav.Link>
+            <Nav.Link href={'assignments'}>Course Assignments</Nav.Link>
           </Nav>
           <Navbar.Text>
             <b>Course Title:</b> {this.state.course.name} <b>Course ID:</b> {this.props.match.params.number}
@@ -112,6 +112,9 @@ class Course extends Component {
       </Navbar>
         <Switch>
             <Route exact path='/course/:number'>
+              <CourseInfo number={this.props.match.params.number} course={this.state.course}/>
+            </Route>
+            <Route exact path='/course/:number/info'>
               <CourseInfo number={this.props.match.params.number} course={this.state.course}/>
             </Route>
             <Route exact path='/course/:number/modules'>

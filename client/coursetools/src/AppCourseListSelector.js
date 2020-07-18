@@ -283,7 +283,7 @@ class App extends Component {
             { message }
           </Navbar.Text>
           <Navbar.Text id="resultCount" className='navFormItem'> { courses.length ? 'Courses Found: ' + courses.length : '' }</Navbar.Text>
-          <Navbar.Text id="selectionCount" className='navFormItem'> { this.state.selected.length ? '  Courses Selected: ' + this.state.selected.length : ''} &nbsp;&nbsp; { this.state.selected.length ? <a href={"/group/"+this.state.groupId} onClick={ this.openCourseGroup } className='btn btn-primary' target="_new">Open Course Group</a> : '' }</Navbar.Text>
+          <Navbar.Text id="selectionCount" className='navFormItem'> { this.state.selected.length ? '  Courses Selected: ' + this.state.selected.length : ''} &nbsp;&nbsp; { this.state.selected.length ? <a href={"group/"+this.state.groupId} onClick={ this.openCourseGroup } className='btn btn-primary' target="_new">Open Course Group</a> : '' }</Navbar.Text>
         </Navbar.Collapse>
       </Navbar>
 
