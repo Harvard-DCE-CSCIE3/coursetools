@@ -123,9 +123,9 @@ function CourseLinkRenderer(props){
   return (
     <div className={'grid_actions'}>
       <a href={"https://"+props.canvasHost+"/courses/"+props.value} target="_blank">{props.value}</a>
-      <div className="courselink-cog"><Link to={process.env.REACT_APP_BASE_URL + '/course/'+props.value} target="_blank"><Cog /></Link></div>
+      <div className="courselink-cog"><Link to={'/course/'+props.value} target="_blank"><Cog /></Link></div>
     </div>
   );
 }
-
+//process.env.REACT_APP_BASE_URL +
 export default Table;
