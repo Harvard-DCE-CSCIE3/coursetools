@@ -37,12 +37,6 @@ class Course extends Component {
    */
   async componentDidMount() {
     try{
-      // fetch course information
-      /*const response = await fetch('https://localhost/config', {credentials: 'include',});
-      console.log(response);
-      const json = await response.json();
-      let canvasHost = json.canvasHost;
-      */
       let course = await api.course.get({
         courseId: this.state.courseId,
         includeSyllabus: true,

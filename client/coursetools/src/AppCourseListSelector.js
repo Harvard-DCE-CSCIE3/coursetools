@@ -186,7 +186,7 @@ class App extends Component {
         return 0;
       })
 
-      const response = await fetch('/config', {credentials: 'include',});  // this is a problem for dev
+      const response = await fetch(process.env.REACT_APP_SERVER_URL_PREFIX + 'config', {credentials: 'include',});  // this is a problem for dev
       console.log(response);
       const json = await response.json();
       let canvasHost = json.canvasHost;

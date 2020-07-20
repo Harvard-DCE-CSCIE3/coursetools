@@ -114,7 +114,7 @@ class CourseGroup extends Component{
 
       console.log('did mount');
 
-      const response = fetch('/config', {credentials: 'include',}).then(async function (response){  // dev problem - locahost
+      const response = fetch(process.env.REACT_APP_SERVER_URL_PREFIX + 'config', {credentials: 'include',}).then(async function (response){  // dev problem - locahost
         console.log(response);
         const json = await response.json();
         canvasHost = json.canvasHost;
@@ -122,12 +122,6 @@ class CourseGroup extends Component{
 
       console.log(this.state.courseGroup)
       try{
-        // fetch course information
-        /*const response = await fetch('https://localhost/config', {credentials: 'include',});
-        console.log(response);
-        const json = await response.json();
-        let canvasHost = json.canvasHost;
-        */
         for(let i=0; i<this.state.courseGroup.length; i++){
           let courseId = this.state.courseGroup[i].id;
           let course = await api.course.get({

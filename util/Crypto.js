@@ -1,8 +1,9 @@
 const crypto = require('crypto');
+const randomstring = require('randomstring');
 
 const algorithm = 'aes-256-ctr';
 
-let key = process.env.ENCRYPTION_KEY;
+let key = randomstring.generate(48);
 
 class Crypto{
   static encrypt(text){
