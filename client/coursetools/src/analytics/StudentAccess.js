@@ -20,11 +20,10 @@ class StudentAccess {
   constructor(students){
     this.students = students;
 
-    this.averageTimeSinceAccess = -1;
     this.studentsNeverAccessed = [];
     this.studentsAccessed = [];
-    this.meanLastAccess = -1;
-    this.medianLastAccess = -1;
+    this.meanLastAccess = 'N/A';
+    this.medianLastAccess = 'N/A';
     this.createStudentLists();
     this.calculateAccessStats();
   }
@@ -49,16 +48,17 @@ class StudentAccess {
     });
     // with the array of only days:
       // get mean and median
-    this.meanLastAccess = mean(lastAccessDays).toFixed(1);
-    this.medianLastAccess = median(lastAccessDays).toFixed(1);
+    if (lastAccessDays && lastAccessDays.length>0){
+      this.meanLastAccess = mean(lastAccessDays).toFixed(1);
+      this.medianLastAccess = median(lastAccessDays).toFixed(1);
 
-    // now get stardard deviation and add that value to the studentsAccessed array
+      // now get stardard deviation and add that value to the studentsAccessed array
 
-    let stdDev = standardDeviation(lastAccessDays);
-    this.studentsAccessed.forEach((el, idx)=>{
-      el.last_access_std_dev = (el.daysSinceActivity - stdDev.toFixed(1)).toFixed(1);
-    });
-
+      let stdDev = standardDeviation(lastAccessDays);
+      this.studentsAccessed.forEach((el, idx)=>{
+        el.last_access_std_dev = (el.daysSinceActivity - stdDev.toFixed(1)).toFixed(1);
+      });
+    }
   }
 
 

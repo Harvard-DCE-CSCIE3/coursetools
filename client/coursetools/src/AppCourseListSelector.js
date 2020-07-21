@@ -51,6 +51,7 @@ class App extends Component {
       loading: false,
       accounts: [{id:'',name:'',}],
       terms: [{id:'',name:'',}],
+      keyword: '',
       termid: '',
       selected: [],
       groupId: '',
@@ -66,8 +67,11 @@ class App extends Component {
       this.setState({accountid: event.target.value});
   }
   handleTermChange(event) {
-        this.setState({termid: event.target.value});
-    }
+      this.setState({termid: event.target.value});
+  }
+  handleKeywordChange(event) {
+      this.setState({keyword: event.target.value});
+  }
 /*
     handleAccountChange(value) {
         this.setState({accountid: value});
@@ -99,6 +103,7 @@ class App extends Component {
               includeAccountName: true,
               includeTerm: true,
               enrollmentTermId: termid || '',
+              searchTerm: event.target.keyword.value,
             });
         }else{
           courses = await api.user.self.listCourses({
@@ -274,6 +279,12 @@ class App extends Component {
                 </Form.Control>
               </Form.Group>
 
+              <Form.Group controlId="courselister.keyword"  className='navFormItem'>
+                <Form.Label className={'navbar-dark navbar-text'}>Search Term:</Form.Label>
+                <Form.Control placeholder="(course title)" type="text" name="keyword" id="keyword" >
+
+                </Form.Control>
+              </Form.Group>
               <Button variant="primary" type="submit"  className='navFormItem'>
                 Submit
               </Button>
