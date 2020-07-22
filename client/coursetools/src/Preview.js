@@ -29,14 +29,14 @@ class Preview extends Component {
    }
 
    componentDidMount() {
-     let content = this.getContent().then((c)=>{
+     setTimeout(()=>{
+       let content = this.getContent().then((c)=>{
        this.setState({content: c});
-     });
-    }
+     })}, Math.round((Math.random()*5000))// cheesy way to avoid throttling: generate random loading time from 0 to 5 seconds
+   )}
 
   async getContent(){
     let type=this.props.item.type;
-    if (type=='Discussion') console.log(this.props.item)
     if (type=='Page'){
       let page = await api.course.page.get({
         courseId: this.state.courseId,
