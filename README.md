@@ -1,6 +1,8 @@
 # coursetools
 
-This is a proof-of-concept project exploring some tools for monitoring, managing, and updating Canvas courses using the Canvas API.
+This is a proof-of-concept project exploring some tools for monitoring, managing, and updating Canvas courses using the Canvas API. This is the result of an academic project, not intended to be a finished product.  
+
+The project may be running a demo instance at https://apps.learningapi.com  
 
 ## Installing and Running Coursetools
 Coursetools can be installed on any computer that has NodeJS installed. The Github project includes both the server- and client-side source code, as well as a prebuilt React runtime which can be served from the NodeJS/Express server.
