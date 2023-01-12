@@ -11,7 +11,7 @@
     "caccl-authorizer": "^1.1.11",
     "caccl-send-request": "^1.0.13",
     "cookie-parser": "~1.4.4",
-    "dce-reactkit": "^1.0.20",
+    "dce-reactkit": "^3.2.2-beta.1",
     "debug": "~2.6.9",
     "dotenv": "^8.2.0",
     "ejs": "~2.6.1",
